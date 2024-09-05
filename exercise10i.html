@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>calculator-new</title>
+
+    <link rel="stylesheet" href="Styles/calculator.css">
+</head>
+
+<body>
+    <div class="result-div">
+        <p class="js-calculate result-side"></p>
+    </div>
+
+    <p>
+        <button class="calculator-button grey-button" onclick="
+            updateCalculator('1');
+            ">1</button>
+        <button class="calculator-button grey-button" onclick="
+             updateCalculator('2');
+        ">2</button>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('3');
+        ">3</button>
+        <button class="calculator-button yellow-button" onclick="
+        updateCalculator('+');
+        ">+</button>
+    </p>
+
+    <p>
+        <button class="calculator-button grey-button" onclick="
+             updateCalculator('4');
+            ">4</button>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('5');
+        ">5</button>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('6');
+        ">6</button>
+        <button class="calculator-button yellow-button" onclick="
+         updateCalculator('-');
+        ">-</button>
+    </p>
+
+    <p>
+        <button class="calculator-button grey-button" onclick="
+        updateCalculator('7');
+        ">7</button>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('8');
+        ">8</button>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('9');
+        ">9</button>
+        <button class="calculator-button yellow-button" onclick="
+         updateCalculator('*');
+        ">*</button>
+    </p>
+
+    <p>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('0');
+        ">0</button>
+        <button class="calculator-button grey-button" onclick="
+         updateCalculator('.');
+        ">.</button>
+        <button class="calculator-button grey-button" onclick="
+        eval(calculation)
+        calculation = eval(calculation);
+        document.querySelector('.js-calculate').innerHTML = calculation;
+        console.log(calculation);
+        ">=</button>
+        <button class="calculator-button yellow-button" onclick="
+         updateCalculator('/');
+        ">/</button>
+    </p>
+
+    <p>
+        <button class="calculator-button grey-button clear-button" onclick="
+            document.querySelector('.js-calculate').innerHTML = '';
+            console.log(calculation = '');
+            ">clear</button>
+    </p>
+
+
+
+
+    <script src="Scripts/calculator.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dom projects</title>
+
+</head>
+
+<body>
+
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="
+        subscribe();
+    ">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+
+    <input placeholder="Cost of order" class="js-cost-input" onkeydown="
+    handleCostKeydown(event)">
+
+    <button onclick="
+    calculateTotal();
+    ">Calculate</button>
+    <p class="js-total-cost"></p>
+
+
+    <input placeholder="Type something" class="js-something" onkeyup="
+    keyUp()">
+    <p class="js-type"></p>
+
+    <script>
+
+        function handleCostKeydown(event) {
+            console.log(event.key);
+            if (event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+
+            let cost = Number(inputElement.value);
+
+
+            if (cost < 40) {
+                (cost += 10);
+
+            }
+
+            document.querySelector('.js-total-cost').innerHTML = `$${cost.toFixed(2)}`
+
+
+        }
+
+        function subscribe() {
+            const buttonElement = document.querySelector('.js-subscribe-button');
+            if (buttonElement.innerHTML /*Text (innerText can be used too)*/ === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed';
+            } else {
+                buttonElement.innerHTML = 'Subscribe'
+            };
+        }
+
+        const somethingElement = document.querySelector('.js-something');
+        document.querySelector('.js-type').innerHTML = somethingElement.value;
+
+        function keyUp() {
+            document.querySelector('.js-type').innerHTML = somethingElement.value;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <button class="js-button">9a</button>
+    <button class="js-button-9b">9b</button>
+    <p>
+        <button onclick="
+            document.querySelector('.js-choice').innerHTML = 'You chose: heads'
+            ">heads</button>
+        <button onclick="
+             document.querySelector('.js-choice').innerHTML = 'You chose: tails'
+        ">tails</button>
+    </p>
+
+    <p class="js-choice">
+
+    </p>
+
+    <input type="text" placeholder="Name" class="js-name-input" onkeydown="
+    if (event.key === 'Enter') {
+        inputMessage();
+    }">
+    <button onclick="
+    inputMessage();">
+        submit
+    </button>
+    <p class="js-message"></p>
+</body>
+
+
+<script>
+    const buttonElement = document.querySelector('.js-button').innerHTML = '9a'
+    console.log(buttonElement);
+    const nineElement = document.querySelector('.js-button-9b').innerHTML = '9b done!'
+    console.log(nineElement);
+
+
+
+    const inputElement = document.querySelector('.js-name-input');
+    document.querySelector('.js-message').innerHTML = `Your name is: ${inputElement.value}`
+
+    function inputMessage() {
+        document.querySelector('.js-message').innerHTML = `Your name is: ${inputElement.value}`
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>practice exercise8</title>
+</head>
+
+<body>
+    <script>
+        const product = {
+            name: 'basketball',
+            priceCent: 2095
+        }
+        console.log(product);
+
+        product.priceCent = product.priceCent + 500
+        console.log(product);
+        product['Delivery-time'] = '3 days'
+        console.log(product);
+
+
+
+        function comparePrice(product1, product2) {
+            if (product1.priceCents < product2.priceCents) {
+                console.log(product1);
+            } else {
+                console.log(product2);
+            }
+        }
+        const item1 = {
+            name: 'shirt',
+            priceCents: 200
+        }
+
+        const item2 = {
+            name: 'shirt',
+            priceCents: 500
+        }
+        comparePrice(item1, item2);
+
+        function isSameProduct(product1, product2) {
+            if (product1.priceCents === product2.priceCents) {
+                console.log(true);
+            } else {
+                console.log(false);
+            }
+        }
+        const items1 = {
+            name: 'football',
+            priceCents: 400
+        }
+
+        const items2 = {
+            name: 'football',
+            priceCents: 400
+        }
+        isSameProduct(items1, items2)
+
+    </script>
+</body>
+
+</html>

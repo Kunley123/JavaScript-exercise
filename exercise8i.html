@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>coin-flip update</title>
+</head>
+
+<body>
+    <button onclick="
+        playGame('heads')">heads</button>
+    <button onclick="
+        playGame('tails')">tails</button>
+    <button onclick="
+         score = {
+                wins: 0,
+                losses: 0
+            };
+            console.log('reset!')
+        // resetButton();
+    ">reset</button>
+
+
+    <script>
+
+        const hour = 13
+        const name = 'Tiaraoluwa'
+        if (hour >= 6 && hour <= 12) {
+            console.log(`Good morning ${name}!`);
+        } else if (hour >= 13 && hour <= 17) {
+            console.log(`Good afternoon ${name}!`);
+        } else {
+            console.log(`Good night ${name}!`)
+        }
+
+
+        const isHoliday = true;
+        const age = 3;
+        if ((age <= 6 || age >= 65) && isHoliday !== true) {
+            console.log('Discount');
+        } else {
+            console.log('No discount');
+        }
+
+
+
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            wins: 0,
+            losses: 0
+        };
+
+
+        let result = '';
+        function playGame(guess) {
+            const randomNum = Math.random();
+            if (randomNum < 0.5) {
+                result = 'heads';
+            } else {
+                result = 'tails'
+            }
+            console.log(result);
+
+            if (result === 'heads') {
+                console.log(`You win!
+wins: ${score.wins += 1}, losses: ${score.losses}`);
+            } else {
+                console.log(`You lose!
+wins: ${score.wins}, losses: ${score.losses += 1}`);
+
+            }
+            localStorage.setItem('score', JSON.stringify(score));
+        }
+
+        // function resetButton() {
+        //     score = {
+        //         wins: 0,
+        //         losses: 0
+        //     };
+        //     console.log('Start again!')
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

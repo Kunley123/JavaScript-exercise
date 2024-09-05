@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>calculator-new</title>
+</head>
+
+<body>
+    <p>
+        <button onclick="
+            updateCalculator('1');
+            ">1</button>
+        <button onclick="
+             updateCalculator('2');
+        ">2</button>
+        <button onclick="
+         updateCalculator('3');
+        ">3</button>
+        <button onclick="
+        updateCalculator('+');
+        ">+</button>
+    </p>
+
+    <p>
+        <button onclick="
+             updateCalculator('4');
+            ">4</button>
+        <button onclick="
+         updateCalculator('5');
+        ">5</button>
+        <button onclick="
+         updateCalculator('6');
+        ">6</button>
+        <button onclick="
+         updateCalculator('-');
+        ">-</button>
+    </p>
+
+    <p>
+        <button onclick="
+        updateCalculator('7');
+        ">7</button>
+        <button onclick="
+         updateCalculator('8');
+        ">8</button>
+        <button onclick="
+         updateCalculator('9');
+        ">9</button>
+        <button onclick="
+         updateCalculator('*');
+        ">*</button>
+    </p>
+
+    <p>
+        <button onclick="
+         updateCalculator('0');
+        ">0</button>
+        <button onclick="
+         updateCalculator('.');
+        ">.</button>
+        <button onclick="
+        eval(calculation)
+        calculation = eval(calculation);
+        document.querySelector('.js-calculate').innerHTML = calculation;
+        console.log(calculation);
+        ">=</button>
+        <button onclick="
+         updateCalculator('/');
+        ">/</button>
+    </p>
+
+    <p>
+        <button onclick="
+            document.querySelector('.js-calculate').innerHTML = '';
+            console.log(calculation = '');
+            ">clear</button>
+    </p>
+
+    <p class="js-calculate"></p>
+
+
+    <script>
+        let calculation = localStorage.getItem('calculation') || '';
+        function updateCalculator(num) {
+            console.log(calculation += num)
+
+            document.querySelector('.js-calculate').innerHTML = calculation;
+
+            localStorage.setItem('calculation', calculation);
+
+
+        }
+
+        document.querySelector('.js-calculate').innerHTML = calculation;
+    </script>
+
+</body>
+
+</html>

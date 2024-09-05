@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>practice exercise6</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const hour = 13
+        const name = 'Tiaraoluwa'
+        if (hour >= 6 && hour <= 12) {
+            console.log(`Good morning ${name}!`);
+        } else if (hour >= 13 && hour <= 17) {
+            console.log(`Good afternoon ${name}!`);
+        } else {
+            console.log(`Good night ${name}!`)
+        }
+
+
+        const isHoliday = true;
+        const age = 3;
+        if ((age <= 6 || age >= 65) && isHoliday !== true) {
+            console.log('Discount');
+        } else {
+            console.log('No discount');
+        }
+
+
+        let result = '';
+
+        const randomNum = Math.random();
+        console.log(randomNum);
+        if (randomNum < 0.5) {
+            result = 'heads';
+        } else {
+            result = 'tails'
+        }
+        console.log(result);
+
+        const guess = 'head';
+        if (result === 'head') {
+            console.log('You win!');
+        } else {
+            console.log('You lose!');
+        }
+    </script>
+</body>
+
+</html>

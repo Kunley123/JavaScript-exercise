@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>exercise11</title>
+</head>
+
+<body>
+    <script>
+        const number = [10, 20, 30]
+        console.log(number)
+        number.splice(2)
+        number.push(99)
+        console.log(number)
+
+        // function getLastValue(array) {
+        //     const numbers = [1, 20, 22, 24, 5]
+
+        //     let lastValue = numbers[numbers.length - 1];
+        //     console.log(lastValue);
+
+        //     const greetings = ['hi', 'hello', 'good'];
+        //     console.log(greetings[greetings.length - 1])
+        // }
+        // getLastValue();
+
+
+        function getLastValue(array) {
+            const lastIndex = array.length - 1
+            return array[lastIndex];
+        }
+        console.log(getLastValue([1, 20, 22, 24, 5]))
+        console.log(getLastValue(['hi', 'hello', 'good']))
+
+        function arraySwap(arrays) {
+            const lastIndex = arrays.length - 1;
+            const lastArray = arrays[lastIndex];
+            const firstArray = arrays[0];
+            arrays[0] = lastArray;
+            arrays[lastIndex] = firstArray;
+            return arrays;
+        }
+        console.log(arraySwap([1, 20, 22, 24, 5]));
+        console.log(arraySwap(['hi', 'hello', 'hey']))
+
+        let i = 0;
+        while (i <= 10) {
+            console.log(i);
+            i = i + 2;
+        }
+
+        for (let i = 0; i <= 10; i += 2) {
+            console.log(i);
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            console.log(i);
+        }
+
+        for (let figure = 5; figure >= 0; figure -= 1) {
+            console.log(figure);
+        }
+
+        let myNumber = 5;
+        while (myNumber >= 0) {
+            console.log(myNumber);
+            myNumber -= 1;
+        }
+
+    </script>
+</body>
+
+</html>

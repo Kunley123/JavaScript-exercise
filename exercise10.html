@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>exercise 10a and b</title>
+    <style>
+        .add-cart-button {
+            background-color: rgb(255, 216, 20);
+            color: rgb(99, 95, 95);
+            border-style: none;
+            font-size: 10px;
+            padding: 3px 25px;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+
+        .request-button {
+            background-color: black;
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-style: none;
+            border-radius: 3px;
+        }
+
+        .schedule-button {
+            background-color: rgb(230, 230, 230);
+            font-size: 8px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-style: none;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+        .toggle-button {
+            padding: 5px 10px;
+            font-size: 12px;
+            border-style: solid;
+            border-radius: 5px;
+            border-width: 1px;
+
+        }
+
+        .is-toggled {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="add-cart-button">Add to Cart</button>
+    <br><br>
+    <button class="request-button">Request now</button>
+    <button class="schedule-button">Schedule for later</button>
+    <br><br>
+    <button class="js-button">Test</button>
+    <br><br>
+
+    <button class="toggle-button js-toggle-button" onclick="
+    togglingButton();
+    ">Gaming</button>
+    <br><br>
+
+    <button class="toggle-button js-gaming-button" onclick="
+    togglerButton('js-gaming-button');">
+        Gaming</button>
+
+    <button class="toggle-button js-tech-button" onclick="
+    toggleButton();">
+        Tech</button>
+
+    <button class="toggle-button js-music-button" onclick="
+    toggledButton();">
+        Music</button>
+
+    <script>
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement.classList.contains('js-button'));
+
+
+
+        function togglingButton() {
+            const toggle = document.querySelector('.js-toggle-button');
+            if (!toggle.classList.contains('is-toggled')) {
+                toggle.classList.add('is-toggled')
+            } else {
+                toggle.classList.remove('is-toggled')
+            }
+        }
+
+
+        function togglerButton() {
+            const toggle = document.querySelector('.js-gaming-button');
+            if (!toggle.classList.contains('is-toggled')) {
+                toggle.classList.add('is-toggled')
+            } else {
+                toggle.classList.remove('is-toggled')
+            }
+        }
+
+
+        function toggleButton() {
+            const toggle = document.querySelector('.js-tech-button');
+            if (!toggle.classList.contains('is-toggled')) {
+                toggle.classList.add('is-toggled')
+            } else {
+                toggle.classList.remove('is-toggled')
+            }
+        }
+
+        function toggledButton() {
+            const toggle = document.querySelector('.js-music-button');
+            if (!toggle.classList.contains('is-toggled')) {
+                toggle.classList.add('is-toggled')
+            } else {
+                toggle.classList.remove('is-toggled')
+            }
+        }
+
+    </script>
+</body>
+
+</html>
