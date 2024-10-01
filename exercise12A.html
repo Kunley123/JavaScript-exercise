@@ -8,24 +8,23 @@
 </head>
 
 <body>
-
     <button class="js-start-button" onclick="
-       startButton() ">
+    ">
         Start
     </button>
 
     <button class="js-loading-start" onclick="
-       updateButton() ">
+       ">
         Start
     </button>
 
     <button class="js-add-to-cart" onclick="
-    updateAdded()">
+    ">
         Add to Cart
     </button>
 
-    <button class="js-add-to-cart" onclick="
-    updateAdded()">
+    <button class="js-add-to-carts" onclick="
+    ">
         Add to Cart
     </button>
 
@@ -74,42 +73,105 @@
 
 
 
+        // function startButton() {
+        //     let button = document.querySelector('.js-start-button');
+
+        //     setTimeout(function () {
+        //         button.innerHTML = 'Finished!'
+        //     }, 1000)
+        // }
+
+
+
+        // Using arrow function instead of the normal function
+        // used in the comment above.
+        //function inside function
+        let button = document.querySelector('.js-start-button');
+        button.addEventListener('click', startButton)
         function startButton() {
             let button = document.querySelector('.js-start-button');
-
-            setTimeout(function () {
+            setTimeout(() => {
                 button.innerHTML = 'Finished!'
             }, 1000)
         }
 
 
+        // function updateButton() {
+        //     let button = document.querySelector('.js-loading-start');
+        //     button.innerHTML = 'Loading...'
+        //     setTimeout(function () {
+        //         button.innerHTML = 'Finished!'
+        //     }, 1000)
+        // }
+
+
+
+        // Using arrow function instead of the normal function
+        // used in the comment above.
+        //function inside function
+        let buttons = document.querySelector('.js-loading-start');
+        buttons.addEventListener('click', updateButton)
         function updateButton() {
             let button = document.querySelector('.js-loading-start');
             button.innerHTML = 'Loading...'
-            setTimeout(function () {
+            setTimeout(() => {
                 button.innerHTML = 'Finished!'
             }, 1000)
         }
 
+
+        // function updateAdded() {
+        //     const added = document.querySelector('.js-added');
+        //     added.innerHTML = 'Added'
+        //     setTimeout(function () {
+        //         added.innerHTML = '';
+        //     }, 2000);
+        // }
+
+
+
+        // Using arrow function instead of the normal function
+        // used in the comment above.
+        //function inside function
+        let newAdded = document.querySelector('.js-add-to-cart');
+        newAdded.addEventListener('click', updateAdded);
         function updateAdded() {
             const added = document.querySelector('.js-added');
             added.innerHTML = 'Added'
-            setTimeout(function () {
+            setTimeout(() => {
                 added.innerHTML = '';
             }, 2000);
         }
 
 
+        // let timeoutId;
+        // function updateAdded() {
+        //     const added = document.querySelector('.js-added');
+        //     added.innerHTML = 'Added';
+
+        //     clearTimeout(timeoutId);
+        //     timeoutId = setTimeout(function () {
+        //         added.innerHTML = '';
+        //     }, 2000);
+        // }
+
+
+
+        // Using arrow function instead of the normal function
+        // used in the comment above.
+        //function inside function
         let timeoutId;
+        const addedNew = document.querySelector('.js-add-to-carts');
+        addedNew.addEventListener('click', updateAdded)
         function updateAdded() {
             const added = document.querySelector('.js-added');
             added.innerHTML = 'Added';
-
             clearTimeout(timeoutId);
-            timeoutId = setTimeout(function () {
+            timeoutId = setTimeout(() => {
                 added.innerHTML = '';
             }, 2000);
         }
+
 
         // setInterval(function () {
         //     if (document.title === 'App') {
