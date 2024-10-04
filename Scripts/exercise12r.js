@@ -38,7 +38,6 @@ function autoplay() {
     } else if (autoplayButton.innerHTML === 'Stop Playing') {
         autoplayButton.innerHTML = 'Auto Play'
     }
-
     if (!isAutoPlaying) {
         intervalId = setInterval(() => {
             const playerMove = pickComputermove();
@@ -72,6 +71,8 @@ document.body.addEventListener('keydown', (event) => {
         playGame('scissors');
     } else if (event.key === 'a') {
         autoplay();
+    } else if (event.key === 'Backspace') {
+        resetScore();
     }
 });
 
@@ -142,28 +143,36 @@ function confirmButton() {
     <button class="js-yes-button">
         Yes
     </button>
-    <button class="js-noo-button">
+    <button class="js-no-button">
         No
-    </button>`
+    </button>`;
+
+    document.querySelector('.js-yes-button')
+        .addEventListener('click', resetScore)
+    function resetScore() {
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        yesEmpty();
+    }
+
+    function yesEmpty() {
+        youSure.innerHTML = '';
+    }
+
+    document.querySelector('.js-no-button').addEventListener('click', yesEmpty)
+
+
 }
 
-function yesEmpty() {
-    youSure.innerHTML = ''
-}
-
-document.querySelector('.js-yes-button')
-    .addEventListener('click', resetScore)
 function resetScore() {
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
     localStorage.removeItem('score');
     updateScoreElement();
-    yesEmpty();
 }
 
-document.body.addEventListener('keydown', (event) => {
-    if (event.key === 'Backspace') {
-        resetScore();
-    }
-})
+
