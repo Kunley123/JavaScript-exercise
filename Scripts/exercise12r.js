@@ -23,14 +23,17 @@ function updateScoreElement() {
 }
 
 
+
 let isAutoPlaying = false;
 let intervalId;
 
 let autoplayButton = document.querySelector('.js-auto-play-button');
-autoplayButton.addEventListener('click', autoplay)
+autoplayButton.addEventListener('click', autoplay);
+
 
 
 function autoplay() {
+
     let autoplayButton = document.querySelector('.js-auto-play-button');
 
     if (autoplayButton.innerHTML === 'Auto Play') {
@@ -48,7 +51,6 @@ function autoplay() {
         clearInterval(intervalId);
         isAutoplaying = false;
     }
-
 }
 
 document.querySelector('.js-rock-button').addEventListener('click', () => {
@@ -126,6 +128,8 @@ function playGame(playerMove) {
 <img src="images/${playerMove}-emoji.png">
 <img src="images/${computerMove}-emoji.png">
 Computer`;
+
+
 }
 
 function pickComputermove() {
